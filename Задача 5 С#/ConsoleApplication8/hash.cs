@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hash
+namespace hashdict
 {
     public class HashTable<TType>
     {
@@ -123,24 +123,5 @@ namespace hash
             }
         }
 
-    }
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            HashTable<int> ht = new HashTable<int>();
-            ht.Add("lol", 300);
-            ht.Add("abd", 100);
-            ht.Add("ddd", 1);
-            ht.Add("ccc", 2);
-            ht.Add("aaa", 25);
-            ht.Delete("aaa");
-            Console.WriteLine(ht["lol"]);
-            Console.WriteLine(ht["abd"]);
-            Console.WriteLine(ht["ddd"]);
-            Console.WriteLine(ht["ccc"]);
-            Console.WriteLine(ht["aaa"]);
-            Console.ReadKey();
-        }
     }
 }
