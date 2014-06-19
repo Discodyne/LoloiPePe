@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace hashdict
 {
-    public class HashTable<TType>
+    public class HashTable
     {
         private class Node
             //класс узла
         { 
             public string key;
-            public TType data;
+            public object data;
             public Node next;
 
-            public Node(string key, TType data, Node next)
+            public Node(string key, object data, Node next)
             {
                 this.data = data;
                 this.key = key;
@@ -50,7 +50,7 @@ namespace hashdict
             return h;
         }
 
-        public void Add(string key, TType value)
+        public void Add(string key, object value)
             //вставка
         {
             int h = HashKey(key);
@@ -94,12 +94,12 @@ namespace hashdict
             }
         }
 
-        public TType Find(string key)
+        public object Find(string key)
             //поиск элемента по ключу
         {
             int h = HashKey(key);
             Node p = array[h];
-            TType res = default(TType);
+            Object res = default(Object);
             bool f = false;
             while ((p != null) && (!f))
                 if (p.key == key)
@@ -111,7 +111,7 @@ namespace hashdict
                     p = p.next;
                     return res;
         }
-        public TType  this[string key]
+        public object this[string key]
         {
             get
             {
